@@ -18,7 +18,7 @@ public class TestController {
 
 	@RequestMapping("/test.do")
 	public String test(Model model){
-		model.addAttribute("test", "test값");
+		model.addAttribute("test", "fuck you");
 		return "test";
 	}
 
