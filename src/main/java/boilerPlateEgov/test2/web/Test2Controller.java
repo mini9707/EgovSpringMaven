@@ -27,13 +27,30 @@ public class Test2Controller {
     }
 
     //Read
+        //All read
     @RequestMapping("/read.do")
     @ResponseBody
     public List<test2VO> readAllMember(){
         return service.readAllMember();
     }
+        //One read
+    @RequestMapping("/oneRead.do")
+    @ResponseBody
+    public test2VO readOneMember(@RequestParam String name){
+        return service.readOneMember(name);
+    }
 
     //Update
+    @RequestMapping(value = "/update.do", method = RequestMethod.PUT)
+    @ResponseBody
+    public String updateMember(@RequestParam String name, @RequestParam int age){
+        return service.updateMember(name, age);
+    }
 
     //Delete
+    @RequestMapping(value = "delete.do", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteMember(@RequestParam String name){
+        return service.deleteMember(name);
+    }
 }

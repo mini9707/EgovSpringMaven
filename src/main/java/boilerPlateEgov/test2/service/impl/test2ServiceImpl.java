@@ -25,4 +25,29 @@ public class test2ServiceImpl extends EgovAbstractServiceImpl implements test2Se
     public List<test2VO> readAllMember() {
         return test2DAO.selectAll();
     }
+
+    public test2VO readOneMember(String name) {
+        return test2DAO.selectOne(name);
+    }
+
+    public String updateMember(String name, int age) {
+        test2VO vo = test2DAO.selectOne(name);
+        if(vo != null) {
+            vo.setAge(age);
+            test2DAO.updateMember(vo);
+            return "success";
+        } else {
+            return "error";
+        }
+    }
+
+    public String deleteMember(String name) {
+        test2VO vo = test2DAO.selectOne(name);
+        if(vo != null) {
+            test2DAO.deleteMember(vo);
+            return "success";
+        } else {
+            return "error";
+        }
+    }
 }

@@ -16,4 +16,16 @@ public class test2DAO extends EgovAbstractMapper {
     public List<test2VO> selectAll() {
         return selectList("test2SelectAll");
     }
+
+    public test2VO selectOne(String name){
+        return selectOne("test2SelectOne", name);
+    }
+
+    public void updateMember(test2VO vo) {
+        update("test2UpdateMember", vo);
+    }
+
+    public void deleteMember(test2VO vo) {
+        delete("test2DeleteMember", vo);
+    }
 }

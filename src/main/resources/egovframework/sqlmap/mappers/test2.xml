@@ -10,4 +10,22 @@
     <select id="test2SelectAll" resultType="boilerPlateEgov.test2.service.test2VO">
         select * from test2
     </select>
+
+    <select id="test2SelectOne" resultType="boilerPlateEgov.test2.service.test2VO">
+        select * from test2
+        where name = #{name}
+    </select>
+
+    <update id="test2UpdateMember" parameterType="boilerPlateEgov.test2.service.test2VO">
+        UPDATE test2
+        SET age = #{age}
+        WHERE name = #{name}
+    </update>
+
+    <delete id="test2DeleteMember" parameterType="boilerPlateEgov.test2.service.test2VO">
+        DELETE FROM test2
+        WHERE name = #{name}
+    </delete>
+
+
 </mapper>
